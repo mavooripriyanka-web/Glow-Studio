@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Gallery Scroll</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-headline">
+                Advanced Care For Your <br>
+                <span class="highlight">Most Radiant Skin</span> Yet
+            </h1>
+            <p class="hero-subtext">
+                Reveal your best skin with advanced, results-driven treatments tailored to your unique needs.
+            </p>
+            <button class="hero-btn">Book your visit</button>
+        </div>
+
+        <!-- Floating Images -->
+        <div class="hero-image image-left">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1000&auto=format&fit=crop"
+                alt="Skincare">
+        </div>
+        <div class="hero-image image-right">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop"
+                alt="Facial">
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="star star-1">✦</div>
+        <div class="star star-2">✦</div>
+        <div class="star star-3">✦</div>
+    </section>
+
+    <!-- Spacer to allow scrolling before -->
+    <div style="height: 20vh; display: flex; align-items: center; justify-content: center; background: #fdfbf7;">
+        <p>Scroll to see animations</p>
+    </div>
+
+    <section class="gallery-section">
+        <h2 class="gallery-title">OUR GALLERY</h2>
+
+        <div class="gallery-container">
+            <!-- Row 1 -->
+            <div class="gallery-row row-1">
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1556760544-74068565f05c?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="gallery-row row-2">
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+                <div class="gallery-item"><img
+                        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop"
+                        alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacer to allow scrolling after -->
+    <div style="height: 100vh; background: #fdfbf7;"></div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        const heroTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero-section",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        // Left Image: Moves Right, Rotates slightly, Parallax Up
+        heroTl.to(".image-left", {
+            x: 100,
+            y: -150,
+            rotation: 0,
+            scale: 0.9,
+            ease: "none"
+        }, 0);
+
+        // Right Image: Moves Left, Rotates slightly, Parallax Up
+        heroTl.to(".image-right", {
+            x: -100,
+            y: -100,
+            rotation: 0,
+            scale: 1.1,
+            ease: "none"
+        }, 0);
+
+        // Stars parallax
+        heroTl.to(".star", {
+            y: -50,
+            ease: "none"
+        }, 0);
+
+
+        const container = document.querySelector('.gallery-section');
+        const row1 = document.querySelector('.row-1');
+        const row2 = document.querySelector('.row-2');
+
+        // ScrollTrigger logic
+        // This pins the section and moves the rows horizontally
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                start: "top top",
+                end: "+=2000", // Scroll distance
+                pin: true,
+                scrub: 1,      // Smooth scrubbing
+                anticipatePin: 1
+            }
+        });
+
+        // Row 1 Animation - Move Right (xPercent increases)
+        // Starting at -20% (partially offscreen left) to 0 or 10%
+        tl.to(row1, {
+            xPercent: 20,
+            ease: "none"
+        }, 0);
+
+        // Row 2 Animation - Move Right, slightly faster (Parallax)
+        tl.to(row2, {
+            xPercent: 30, // Moves slightly more than row 1
+            ease: "none"
+        }, 0);
+
+        // Add 3D rotation interaction on scroll velocity
+        let proxy = { skew: 0 },
+            skewSetter = gsap.quickSetter(".gallery-item", "rotateY", "deg"),
+            clamp = gsap.utils.clamp(-10, 10);
+
+        ScrollTrigger.create({
+            trigger: container,
+            start: "top top",
+            end: "+=2000",
+            onUpdate: (self) => {
+                let skew = clamp(self.getVelocity() / -300);
+                if (Math.abs(skew) > Math.abs(proxy.skew)) {
+                    proxy.skew = skew;
+                    gsap.to(proxy, {
+                        skew: 0,
+                        duration: 0.8,
+                        ease: "power3",
+                        overwrite: true,
+                        onUpdate: () => skewSetter(proxy.skew)
+                    });
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

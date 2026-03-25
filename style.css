@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #fdfbf7;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffbf5;
+    /* Soft cream */
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-headline {
+    font-size: 4rem;
+    color: #2a3c5f;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-headline .highlight {
+    color: #3e5075;
+}
+
+.hero-subtext {
+    font-size: 1.2rem;
+    color: #5e5346;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    padding: 15px 40px;
+    background-color: #2a3c5f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Floating Images */
+.hero-image {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-left {
+    top: 15%;
+    left: 10%;
+    transform: rotate(-10deg);
+}
+
+.image-right {
+    bottom: 15%;
+    right: 10%;
+    transform: rotate(10deg);
+}
+
+/* Decorations */
+.star {
+    position: absolute;
+    font-size: 2rem;
+    color: #2a3c5f;
+    opacity: 0.6;
+}
+
+.star-1 {
+    top: 20%;
+    right: 25%;
+}
+
+.star-2 {
+    bottom: 30%;
+    left: 25%;
+}
+
+.star-3 {
+    top: 60%;
+    left: 10%;
+}
+
+/* Gallery Section */
+.gallery-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    perspective: 1000px;
+    /* Essential for 3D effects */
+}
+
+.gallery-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(42, 60, 95, 0.05);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    margin: 0;
+}
+
+.gallery-container {
+    position: relative;
+    z-index: 10;
+    transform: rotate(-2deg);
+    /* Global tilt for style */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.gallery-row {
+    display: flex;
+    gap: 40px;
+    width: 120%;
+    /* Wider than viewport to start/end offscreen */
+    margin-left: -10%;
+    /* Center the wide strip naturally */
+}
+
+/* Stagger start positions manually via CSS if needed, or rely on GSAP 'from' */
+.row-1 {
+    justify-content: flex-start;
+}
+
+.row-2 {
+    justify-content: flex-start;
+    margin-left: -20%;
+    /* Start offset for staggered 2nd row */
+}
+
+.gallery-item {
+    flex-shrink: 0;
+    width: 350px;
+    height: 450px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+/* Hover Effects */
+.gallery-item:hover {
+    transform: scale(1.05);
+    /* User asked for scale hover */
+    z-index: 20;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}

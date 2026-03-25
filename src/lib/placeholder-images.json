@@ -1,0 +1,754 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-main",
+      "description": "A serene spa-like setting with minimalist decor and soft, natural light, with a woman relaxing.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "spa relax"
+    },
+    {
+      "id": "treatment-facial",
+      "description": "A close-up of a woman receiving a facial treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "woman facial"
+    },
+    {
+      "id": "treatment-massage",
+      "description": "A person receiving a relaxing back massage.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib2R5JTIwd3JhcCUyMHNwYXxlbnwwfHx8fDE3NjgyODQyMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "relaxing massage"
+    },
+    {
+      "id": "treatment-wrap",
+      "description": "A woman wrapped in towels for a body treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib2R5JTIwd3JhcCUyMHNwYXxlbnwwfHx8fDE3NjgyODQyMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "body wrap spa"
+    },
+    {
+      "id": "treatment-peel",
+      "description": "A esthetician applying a chemical peel to a client's face.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "chemical peel"
+    },
+    {
+      "id": "treatment-hot-stone",
+      "description": "Hot stones placed on a person's back during a massage.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob3QlMjBzdG9uZSUyMG1hc3NhZ2V8ZW58MHx8fHwxNzY4Mjg0MjMxfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "hot stone massage"
+    },
+    {
+      "id": "daily-essentials",
+      "description": "A woman with glowing skin, smiling serenely.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glowing skin"
+    },
+    {
+      "id": "newsletter-bg",
+      "description": "Close up of a woman's eyes with beautiful skin.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman eyes closeup"
+    },
+    {
+      "id": "location-map",
+      "description": "A stylish map pointing to a clinic location.",
+      "imageUrl": "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjgyODQyMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "map location"
+    },
+    {
+      "id": "lip-blush",
+      "description": "A close-up of lips after a lip blush procedure.",
+      "imageUrl": "https://images.unsplash.com/photo-1588510026303-8843b178be62?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "lip blush"
+    },
+    {
+      "id": "body-sculpting",
+      "description": "A woman with a toned abdomen, representing body sculpting.",
+      "imageUrl": "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?q=80&w=2070&auto=format&fit=crop",
+      "imageHint": "body sculpting"
+    },
+    {
+      "id": "microneedling",
+      "description": "A close-up of a microneedling device on skin.",
+      "imageUrl": "/microneedling-pen.jpg",
+      "imageHint": "microneedling device"
+    },
+    {
+      "id": "appointment-booking",
+      "description": "Two women with clear skin smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0d28lMjB3b21lbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzY5MzM3OTUwfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "two women smiling"
+    },
+    {
+      "id": "instagram-1",
+      "description": "A man smiling with a clay mask on his face.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man face mask"
+    },
+    {
+      "id": "instagram-2",
+      "description": "A man receiving a facial treatment with a tool on his forehead.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man facial treatment"
+    },
+    {
+      "id": "instagram-3",
+      "description": "A woman receiving a treatment on her face with a wand-like device.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZXN0aGV0aWNzJTIwZmFjZXxlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "facial wand treatment"
+    },
+    {
+      "id": "instagram-4",
+      "description": "A close-up of a woman with glowing skin, with her eyes closed.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glowing skin closeup"
+    },
+    {
+      "id": "instagram-5",
+      "description": "A woman smiling with a dab of cream on her cheek.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman face cream"
+    },
+    {
+      "id": "work-wonders-peel",
+      "description": "A woman with a towel on her head applying a face mask.",
+      "imageUrl": "https://images.unsplash.com/photo-1552694436-13d823b5c25e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXNlciUyMHNraW4lMjB0cmVhdG1lbnR8ZW58MHx8fHwxNzY5MzM4MDU5fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "face mask woman"
+    },
+    {
+      "id": "contact-hero",
+      "description": "A close-up of a woman's face, touching her cheek.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman face"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "A close-up of a laser hair removal procedure on a person's leg.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661386084694-0523d8d1fc9e?q=80&w=800",
+      "imageHint": "premium laser hair removal"
+    },
+    {
+      "id": "about-treatment-1",
+      "description": "Woman in protective eyewear receiving a treatment.",
+      "imageUrl": "/inside1-menopausalskincare.jpg",
+      "imageHint": "spa treatment"
+    },
+    {
+      "id": "about-treatment-2",
+      "description": "Woman lying down for a facial treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNwYXxlbnwwfHx8fDE3NjkzODQ1NDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman spa"
+    },
+    {
+      "id": "about-us-hero-woman",
+      "description": "A portrait of a smiling woman.",
+      "imageUrl": "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=400&auto=format=fit=crop",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "laser-facial-skin-tightening",
+      "description": "A woman's face receiving a skin tightening treatment with a laser device.",
+      "imageUrl": "https://images.unsplash.com/photo-1604025707953-41752f5793ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsYXNlciUyMGZhY2lhbHxlbnwwfHx8fDE3Njg1NjA5MDZ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "laser facial"
+    },
+    {
+      "id": "face-neck-skin-tightening",
+      "description": "A close-up on a woman's neck area receiving a laser treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1643176895742-ec07101a6135?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bmVjayUyMGxhc2VyfGVufDB8fHx8fDE3Njg1NjA5MDZ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "neck laser"
+    },
+    {
+      "id": "dark-spot-removal-face",
+      "description": "A close-up on a cheek with dark spots, with a laser pointer on it.",
+      "imageUrl": "https://images.unsplash.com/photo-1642816465017-1f9b1d96c8b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwc3BvdCUyMHJlbW92YWx8ZW58MHx8fHwxNzY4NTYwOTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark spot removal"
+    },
+    {
+      "id": "dark-spot-removal-body",
+      "description": "A laser being used to remove dark spots from a person's back.",
+      "imageUrl": "https://images.unsplash.com/photo-1665791566033-83bdc55a42c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxib2R5JTIwc3BvdCUyMHJlbW92YWx8ZW58MHx8fHwxNzY4NTYwOTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "body spot removal"
+    },
+    {
+      "id": "localized-dark-spot-removal",
+      "description": "A single dark spot on skin being treated with a laser.",
+      "imageUrl": "https://images.unsplash.com/photo-1586115752989-c6d507e1f125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzcG90JTIwbGFzZXIlMjB0cmVhdG1lbnR8ZW58MHx8fHwxNzY4NTYwOTA2fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "spot laser treatment"
+    },
+    {
+      "id": "redness-removal-rosacea",
+      "description": "A face with rosacea redness before and after treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1591148782739-5bc858f02748?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb3NhY2VhJTIwdHJlYXRtZW50fGVufDB8fHx8fDE3Njg1NjA5MDZ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "rosacea treatment"
+    },
+    {
+      "id": "laser-full-face",
+      "description": "Beauty portrait of young Asian woman with soft lighting.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser face"
+    },
+    {
+      "id": "laser-cheeks",
+      "description": "Beauty portrait of young Asian woman.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser cheeks"
+    },
+    {
+      "id": "laser-upper-lip",
+      "description": "Close-up beauty portrait.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser lip"
+    },
+    {
+      "id": "laser-chin",
+      "description": "Beauty portrait for chin laser treatment.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser chin"
+    },
+    {
+      "id": "laser-forehead",
+      "description": "Beauty portrait for forehead laser treatment.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser forehead"
+    },
+    {
+      "id": "laser-neck",
+      "description": "Beauty portrait for neck laser treatment.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser neck"
+    },
+    {
+      "id": "laser-underarms",
+      "description": "Woman looking at smooth armpits in mirror.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661340677719-7e468df4359e?q=80&w=800",
+      "imageHint": "premium laser underarm"
+    },
+    {
+      "id": "laser-half-arms",
+      "description": "Woman admiring smooth arms.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661340677719-7e468df4359e?q=80&w=800",
+      "imageHint": "premium laser arm"
+    },
+    {
+      "id": "laser-full-arms",
+      "description": "Total arm smoothness.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661340677719-7e468df4359e?q=80&w=800",
+      "imageHint": "premium laser full arm"
+    },
+    {
+      "id": "laser-stomach",
+      "description": "Minimal aesthetic body shot.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium laser stomach"
+    },
+    {
+      "id": "laser-half-back",
+      "description": "Relaxing spa back treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1542848285-4777eb2a621e?q=80&w=800",
+      "imageHint": "premium laser back"
+    },
+    {
+      "id": "laser-full-back",
+      "description": "Relaxing spa full back treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1542848285-4777eb2a621e?q=80&w=800",
+      "imageHint": "premium laser full back"
+    },
+    {
+      "id": "laser-full-bikini",
+      "description": "Minimal aesthetic bikini.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium laser bikini"
+    },
+    {
+      "id": "laser-butt-cheeks",
+      "description": "Minimal aesthetic body treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium body treatment"
+    },
+    {
+      "id": "laser-belly-line",
+      "description": "Minimal aesthetic belly line.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium laser belly"
+    },
+    {
+      "id": "laser-half-legs",
+      "description": "Woman receiving leg epilation.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661505071420-1f10ce4108e0?q=80&w=800",
+      "imageHint": "premium laser leg"
+    },
+    {
+      "id": "laser-full-legs",
+      "description": "Woman receiving full leg epilation.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661505071420-1f10ce4108e0?q=80&w=800",
+      "imageHint": "premium laser full leg"
+    },
+    {
+      "id": "laser-beard-contour",
+      "description": "Man relaxing during laser beard contouring.",
+      "imageUrl": "https://images.unsplash.com/photo-1542848285-4777eb2a621e?q=80&w=800",
+      "imageHint": "premium laser beard"
+    },
+    {
+      "id": "laser-men-upper-body",
+      "description": "Man relaxing during chest treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1542848285-4777eb2a621e?q=80&w=800",
+      "imageHint": "premium laser man chest"
+    },
+    {
+      "id": "combo-bikini-underarms",
+      "description": "Minimal aesthetic bikini and underarms.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium bikini underarm"
+    },
+    {
+      "id": "combo-legs-underarms",
+      "description": "Woman with smooth legs and underarms.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661505071420-1f10ce4108e0?q=80&w=800",
+      "imageHint": "premium legs underarm"
+    },
+    {
+      "id": "combo-legs-bikini",
+      "description": "Minimal aesthetic body.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium legs bikini"
+    },
+    {
+      "id": "combo-full-body-women",
+      "description": "Minimal aesthetic full body.",
+      "imageUrl": "https://images.unsplash.com/photo-1467632499275-7a693a761056?q=80&w=800",
+      "imageHint": "premium full body laser"
+    },
+    {
+      "id": "combo-face-underarms",
+      "description": "Beauty portrait.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium face underarm"
+    },
+    {
+      "id": "combo-arms-underarms",
+      "description": "Woman with smooth arms and underarms.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661340677719-7e468df4359e?q=80&w=800",
+      "imageHint": "premium arms underarm"
+    },
+    {
+      "id": "combo-legs-arms",
+      "description": "Woman with smooth legs and arms.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661505071420-1f10ce4108e0?q=80&w=800",
+      "imageHint": "premium legs arms"
+    },
+    {
+      "id": "microneedling-face",
+      "description": "Microneedling on a woman's face.",
+      "imageUrl": "https://images.unsplash.com/photo-1727386245205-2112b722af99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtaWNyb25lZWRsaW5nJTIwZmFjZXxlbnwwfHx8fDE3Njg4Mjc0MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling face"
+    },
+    {
+      "id": "microneedling-face-neck",
+      "description": "Microneedling on neck.",
+      "imageUrl": "https://images.unsplash.com/photo-1628771065117-74ccb5690668?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbG9zZSUyMHVwJTIwYmVhdXR5JTIwbmVja3xlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling neck"
+    },
+    {
+      "id": "microneedling-decollete",
+      "description": "Microneedling on decollete area.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib2R5JTIwd3JhcCUyMHNwYXxlbnwwfHx8fDE3NjgyODQyMzF8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling decollete"
+    },
+    {
+      "id": "microneedling-back",
+      "description": "Microneedling on a person's back.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbW9vdGglMjBiYWNrfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling back"
+    },
+    {
+      "id": "microneedling-body-medium",
+      "description": "Microneedling on a medium body part like thighs.",
+      "imageUrl": "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtaWNyb25lZWRsaW5nJTIwYm9keXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling body"
+    },
+    {
+      "id": "microneedling-body-large",
+      "description": "Microneedling on a large body part like the stomach.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtaWNyb25lZWRsaW5nJTIwYm9keXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "microneedling body"
+    },
+    {
+      "id": "jelly-mask-face",
+      "description": "A woman with a jelly mask on her face.",
+      "imageUrl": "https://images.unsplash.com/photo-1688588343159-c0694f3ed81f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8amVsbHklMjBtYXNrfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "jelly mask"
+    },
+    {
+      "id": "jelly-mask-face-neck",
+      "description": "A woman with a jelly mask on her face and neck.",
+      "imageUrl": "https://images.unsplash.com/photo-1698757803598-e6318a9a22c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxqZWxseSUyMG1hc2t8ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "jelly mask"
+    },
+    {
+      "id": "jelly-mask-decollete",
+      "description": "A jelly mask on the decollete area.",
+      "imageUrl": "https://images.unsplash.com/photo-1717353743080-420c65bcc964?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxqZWxseSUyMG1hc2t8ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "jelly mask"
+    },
+    {
+      "id": "microneedling-package",
+      "description": "A set of skincare products representing a package.",
+      "imageUrl": "https://images.unsplash.com/photo-1686831757685-de3cadfc2325?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxza2luY2FyZSUyMHBhY2thZ2V8ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "skincare package"
+    },
+    {
+      "id": "facial-classic-glow",
+      "description": "Woman with glowing, radiant skin receiving a facial.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZXN0aGV0aWNzJTIwZmFjZXxlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "glowing skin facial"
+    },
+    {
+      "id": "facial-deep-clean-led",
+      "description": "Woman receiving LED light therapy for acne treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1598214902142-643c339fe3d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWQlMjBjbGVhbnNpbmd8ZW58MHx8fHwxNzY4OTEyMzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "led light facial"
+    },
+    {
+      "id": "facial-hydrating-jelly",
+      "description": "Close-up of a hydrating jelly mask application.",
+      "imageUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcCUyMHJlbGF4fGVufDB8fHx8MTc2ODI3ODIzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "jelly mask application"
+    },
+    {
+      "id": "facial-back-glow",
+      "description": "Woman getting a back facial.",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcCUyMGNoJTIwbGluZXN8ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "back facial"
+    },
+    {
+      "id": "hydrafacial-signature",
+      "description": "A hydrafacial machine being used on a client's face.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZXN0aGV0aWNzJTIwdHJlYXRtZW50fGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hydrafacial machine"
+    },
+    {
+      "id": "hydrafacial-deluxe",
+      "description": "A hydrafacial treatment combined with LED therapy.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbW9vdGglMjBiYWNrfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hydrafacial led"
+    },
+    {
+      "id": "hydrafacial-platinum",
+      "description": "Lymphatic drainage massage during a facial.",
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNwYXxlbnwwfHx8fDE3NjkzODQ1NDh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "lymphatic drainage"
+    },
+    {
+      "id": "hydrafacial-perk-eye",
+      "description": "Detailed close-up of eye area treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHwzZCUyMGV5ZSUyMGNsZWFuc2luZ3xlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "eye perk treatment"
+    },
+    {
+      "id": "hydrafacial-perk-lip",
+      "description": "Detailed close-up of lip treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1628771065117-74ccb5690668?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwbHVtcCUyMGxpcHN8ZW58MHx8fHwxNzY4OTEyMzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lip perk treatment"
+    },
+    {
+      "id": "peel-perfect-derma",
+      "description": "Application of a chemical peel using a dropper.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGVtaWNhbCUyMHBlZWwlMjBkcm9wcGVyfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chemical peel dropper"
+    },
+    {
+      "id": "peel-booster-plus",
+      "description": "A bottle of skincare serum (gold).",
+      "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnb2xkJTIwc2VydW18ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gold serum booster"
+    },
+    {
+      "id": "peel-booster-clear",
+      "description": "A bottle of clearing skincare serum (blue/clear).",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-1987594a8b79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGVhciUyMHNlcnVtfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clear serum booster"
+    },
+    {
+      "id": "peel-booster-plus-plus",
+      "description": "A powerful skincare serum in a bottle (rose/red).",
+      "imageUrl": "https://images.unsplash.com/photo-1608248596658-00d9e72847fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb3NlJTIwc2VydW18ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rose serum booster"
+    },
+    {
+      "id": "laser-facial-skin-tightening",
+      "description": "Laser treatment for facial skin tightening.",
+      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXNlciUyMGZhY2lhbHxlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "laser facial"
+    },
+    {
+      "id": "face-neck-skin-tightening",
+      "description": "Skin tightening treatment for face and neck.",
+      "imageUrl": "https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZWNrJTIwdHJlYXRtZW50fGVufDB8fHx8MTc2ODkxMjM0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neck tightening"
+    },
+    {
+      "id": "dark-spot-removal-face",
+      "description": "Laser removal of dark spots on the face.",
+      "imageUrl": "https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGVhciUyMHNraW58ZW58MHx8fHwxNzY4OTEyMzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clear face skin"
+    },
+    {
+      "id": "dark-spot-removal-body",
+      "description": "Laser removal of dark spots on the body.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYWNrJTIwdHJlYXRtZW50fGVufDB8fHx8MTc2ODkxMjM0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "body skin treatment"
+    },
+    {
+      "id": "localized-dark-spot-removal",
+      "description": "Targeted laser treatment for specific dark spots.",
+      "imageUrl": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXNlciUyMHBlbnxlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "targeted laser"
+    },
+    {
+      "id": "redness-removal-rosacea",
+      "description": "Laser treatment for redness and rosacea.",
+      "imageUrl": "https://images.unsplash.com/photo-1552693673-1bf958298935?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWxtJTIwc2tpbnxlbnwwfHx8fDE3Njg5MTIzNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rosacea treatment"
+    },
+    {
+      "id": "biorepeel-blue",
+      "description": "Blue serum being applied to a face.",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-1987594a8b79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibHVlJTIwc2VydW18ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blue serum"
+    },
+    {
+      "id": "biorepeel-gold",
+      "description": "Gold serum for body treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnb2xkJTIwc2VydW18ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gold peel"
+    },
+    {
+      "id": "biorepeel-rose",
+      "description": "Rose serum for sensitive areas.",
+      "imageUrl": "https://images.unsplash.com/photo-1608248596658-00d9e72847fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb3NlJTIwc2VydW18ZW58MHx8fHwxNzY4ODI3NDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rose serum"
+    },
+    {
+      "id": "biorepeel-package",
+      "description": "Package of BioRePeel treatments.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbW9vdGglMjBiYWNrfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "peel package"
+    },
+    {
+      "id": "cavitation-small",
+      "description": "Ultrasound cavitation on arms.",
+      "imageUrl": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcm0lMjBza2luJTIwY2FyZXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "arm treatment"
+    },
+    {
+      "id": "cavitation-medium",
+      "description": "Ultrasound cavitation on abdomen.",
+      "imageUrl": "https://images.unsplash.com/photo-1574680096141-1cddd32e24d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmbGF0JTIwc3RvbWFjaHxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "abdominal treatment"
+    },
+    {
+      "id": "cavitation-large",
+      "description": "Ultrasound cavitation on legs.",
+      "imageUrl": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsZWdzJTIwc2tpbiUyMGNhcmV8ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "leg treatment"
+    },
+    {
+      "id": "rf-face",
+      "description": "Radiofrequency facial treatment.",
+      "imageUrl": "https://images.unsplash.com/photo-1616394584738-65a51a946342?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYWNpYWwlMjB0cmVhdG1lbnR8ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "rf face"
+    },
+    {
+      "id": "rf-small",
+      "description": "Radiofrequency on the neck.",
+      "imageUrl": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZWNrJTIwc2tpbiUyMGNhcmV8ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "rf neck"
+    },
+    {
+      "id": "rf-medium",
+      "description": "Radiofrequency on the thighs.",
+      "imageUrl": "https://images.unsplash.com/photo-1618331835717-801e976710b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0aGlnaCUyMHNraW58ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "rf thighs"
+    },
+    {
+      "id": "rf-large",
+      "description": "Radiofrequency on the stomach.",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYWR5JTIwbWFzc2FnZXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "rf body"
+    },
+    {
+      "id": "vacuum-small",
+      "description": "Vacuum therapy on the neck/chin.",
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxza2luJTIwY2FyZXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "vacuum neck"
+    },
+    {
+      "id": "vacuum-medium",
+      "description": "Vacuum therapy on the buttocks.",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXNzYWdlJTIwdGhlcmFweXxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "vacuum buttocks"
+    },
+    {
+      "id": "vacuum-large",
+      "description": "Vacuum therapy on the legs.",
+      "imageUrl": "https://images.unsplash.com/photo-1519824145371-296894a0daa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXNzYWdlJTIwbGVnc3xlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "vacuum legs"
+    },
+    {
+      "id": "laser-lypolysis-small",
+      "description": "Laser lipolysis on arms.",
+      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXNlciUyMHRyZWF0bWVudHxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "laser lipo arm"
+    },
+    {
+      "id": "laser-lypolysis-medium",
+      "description": "Laser lipolysis on abdomen.",
+      "imageUrl": "https://images.unsplash.com/photo-1628771065117-74ccb5690668?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWxseSUyMHNraW58ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "laser lipo abdomen"
+    },
+    {
+      "id": "laser-lypolysis-large",
+      "description": "Laser lipolysis on legs.",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXNlciUyMHRoZXJhcHl8ZW58MHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "laser lipo legs"
+    },
+    {
+      "id": "ems-upper",
+      "description": "EMS training on upper body.",
+      "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxneW0lMjB0cmFpbmluZ3xlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "ems training"
+    },
+    {
+      "id": "ems-lower",
+      "description": "EMS training on lower body.",
+      "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxneW0lMjBsZWdzfGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "ems legs"
+    },
+    {
+      "id": "ems-core",
+      "description": "EMS training on abs.",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnMlMjB0cmFpbmluZ3xlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "ems core"
+    },
+    {
+      "id": "sauna-blanket",
+      "description": "Person relaxing in a sauna blanket.",
+      "imageUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGElMjByZWxheHxlbnwwfHx8fDE3Njg4Mjc0MDJ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "sauna blanket"
+    },
+    {
+      "id": "lip-blush-main",
+      "description": "Close-up of lips with a soft pink blush tattoo.",
+      "imageUrl": "https://images.unsplash.com/photo-1588510026303-8843b178be62?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "soft lip blush"
+    },
+    {
+      "id": "lip-blush-refresh",
+      "description": "Lips with a vibrant, refreshed color tint.",
+      "imageUrl": "https://images.unsplash.com/photo-1588510026303-8843b178be62?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "vibrant lip tint"
+    },
+    {
+      "id": "lip-blush-dark-neutralisation",
+      "description": "Correction of dark lip tones.",
+      "imageUrl": "https://images.unsplash.com/photo-1588510026303-8843b178be62?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "dark lip correction"
+    },
+    {
+      "id": "lip-blush-neutralisation",
+      "description": "Before and after of lip color correction.",
+      "imageUrl": "https://images.unsplash.com/photo-1721773958355-7fffc887c3d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsaXAlMjBjb3JyZWN0aW9ufGVufDB8fHx8MTc2ODgyNzQwMnww&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "lip correction"
+    },
+    {
+      "id": "lip-blush-melanin-rich",
+      "description": "Lip blush on melanin-rich lips.",
+      "imageUrl": "https://images.unsplash.com/photo-1588510026303-8843b178be62?q=80&w=1887&auto=format&fit=crop",
+      "imageHint": "melanin lips"
+    },
+    {
+      "id": "laser-jawline",
+      "description": "Beauty portrait for jawline laser.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1682095612784-eb9869511a3b?q=80&w=800",
+      "imageHint": "premium laser jawline"
+    },
+    {
+      "id": "laser-hair-custom",
+      "description": "Premium laser hair removal treatment.",
+      "imageUrl": "https://plus.unsplash.com/premium_photo-1661386084694-0523d8d1fc9e?q=80&w=800",
+      "imageHint": "premium laser hair removal"
+    },
+    {
+      "id": "chemical-peel-before-after",
+      "description": "Before and after results of a chemical peel treatment.",
+      "imageUrl": "/chemical peel before after.jpg",
+      "imageHint": "chemical peel results"
+    },
+    {
+      "id": "lip-blush-before-after",
+      "description": "Before and after results of a lip blush treatment.",
+      "imageUrl": "/lip blush before after.jpg",
+      "imageHint": "lip blush results"
+    },
+    {
+      "id": "facial-before-after",
+      "description": "Before and after results of a facial treatment.",
+      "imageUrl": "/facial before after copy.jpg",
+      "imageHint": "facial results"
+    },
+    {
+      "id": "microneedling-before-after",
+      "description": "Before and after results of a microneedling treatment.",
+      "imageUrl": "/Microneedling-before-and-after.jpg",
+      "imageHint": "microneedling results"
+    },
+    {
+      "id": "laser-skin-care-before-after",
+      "description": "Before and after results of a laser skin care treatment.",
+      "imageUrl": "/laser skin care before after.jpg",
+      "imageHint": "laser skin care results"
+    },
+    {
+      "id": "laser-hair-removal-before-after",
+      "description": "Before and after results of a laser hair removal treatment.",
+      "imageUrl": "/laser hair removal before after.jpg",
+      "imageHint": "laser hair removal results"
+    },
+    {
+      "id": "instagram-real-1",
+      "description": "Instagram image 1",
+      "imageUrl": "/278392417.jpg",
+      "imageHint": "instagram image 1"
+    },
+    {
+      "id": "instagram-real-2",
+      "description": "Instagram image 2",
+      "imageUrl": "/lovepik-skin-care.jpg",
+      "imageHint": "instagram image 2"
+    },
+    {
+      "id": "instagram-real-3",
+      "description": "Instagram image 3",
+      "imageUrl": "/facial.jpg",
+      "imageHint": "instagram image 3"
+    },
+    {
+      "id": "instagram-real-4",
+      "description": "Instagram image 4",
+      "imageUrl": "/image copy.png",
+      "imageHint": "instagram image 4"
+    },
+    {
+      "id": "instagram-real-5",
+      "description": "Instagram image 5",
+      "imageUrl": "/face.jpg",
+      "imageHint": "instagram image 5"
+    },
+    {
+      "id": "instagram-real-6",
+      "description": "Instagram image 6",
+      "imageUrl": "/image copy 3.png",
+      "imageHint": "instagram image 6"
+    }
+  ]
+}

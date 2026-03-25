@@ -1,0 +1,32 @@
+
+> nextn@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.5.9
+   - Environments: .env
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully in 11.9s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/22) ...
+Automatic initialization failed. Falling back to firebase config object. Error [FirebaseError]: Firebase: Need to provide options, when not being deployed to hosting via source. (app/no-options).
+    at W (D:\antigravity\lune skin care\luneskincare\.next\server\chunks\653.js:1:290461)
+    at w (D:\antigravity\lune skin care\luneskincare\.next\server\chunks\709.js:2:1082)
+    at <unknown> (D:\antigravity\lune skin care\luneskincare\.next\server\chunks\709.js:1:77440)
+    at k (D:\antigravity\lune skin care\luneskincare\.next\server\chunks\709.js:1:77435) {
+  code: 'app/no-options',
+  customData: {}
+}
+AppointmentForm Auth State: { user: false, isUserLoading: true }
+   Generating static pages (5/22) 
+Error occurred prerendering page "/treatments". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Attempted to call useLanguage() from the server but useLanguage is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at <unknown> (D:\antigravity\lune skin care\luneskincare\.next\server\chunks\709.js:2:3535)
+    at z (D:\antigravity\lune skin care\luneskincare\.next\server\app\treatments\page.js:1:4995)
+    at stringify (<anonymous>) {
+  digest: '3676691045'
+}
+Export encountered an error on /treatments/page: /treatments, exiting the build.
+ Γ¿» Next.js build worker exited with code: 1 and signal: null

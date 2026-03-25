@@ -1,0 +1,191 @@
+/**
+ * This ruleset enforces a strict, patient-centric security model for a healthcare application.
+ *
+ * Core Philosophy:
+ * The primary security principle is data isolation based on user ownership. A patient's
+ * personal data and appointments are private and can only be accessed by the authenticated
+ * patient themself. Information about clinics, however, is considered public and is
+ * readable by anyone, including unauthenticated users. All write operations are strictly
+ * controlled.
+ *
+ * Data Structure:
+ * The data is organized into two main top-level collections: `/patients` and `/clinics`.
+ * Each patient's data is stored under a path corresponding to their user ID
+ * (`/patients/{patientId}`). All data specific to that patient, such as their appointments,
+ * is nested within this path (`/patients/{patientId}/appointments/{appointmentId}`). This
+ * hierarchical structure makes it simple to apply ownership-based rules.
+ *
+ * Key Security Decisions:
+ * - Patient Data Isolation: All documents and subcollections under `/patients/{patientId}`
+ *   are only accessible by the user whose UID matches the `patientId`.
+ * - No User Enumeration: Listing the entire `/patients` collection is explicitly disallowed
+ *   to protect patient privacy and prevent user enumeration attacks.
+ * - Public, Read-Only Clinics: The `/clinics` collection is publicly readable but cannot be
+ *   modified by clients, ensuring data integrity. It's assumed this data is managed
+ *   through a trusted server-side process.
+ * - Deny-by-Default: Access is implicitly denied unless an `allow` rule explicitly grants it.
+ *
+ * Denormalization for Authorization:
+ * To ensure fast and secure authorization, the `patientId` is denormalized into appointment
+ * documents. When a new appointment is created under `/patients/{patientId}/appointments`, the
+ * rules require the document data to contain a `patientId` field that matches the `patientId` in
+ * the path. This creates a durable, verifiable link to the owner without requiring costly
+ * lookups to parent documents.
+ *
+ * Structural Segregation:
+ * The design uses separate top-level collections for different data types with distinct
+ * access patterns. Private patient data is in `/patients`, while public clinic data is in
+ * `/clinics`. This segregation is more secure and performant than mixing public and
+ * private data in a single collection.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------------------
+    // Helper Functions
+    // -------------------------------------------------------------------------
+
+    /**
+     * Returns true if the user is signed in.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * Returns true if the requesting user's UID matches the provided userId.
+     * This is the core function for enforcing document ownership.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Returns true if the user is the owner and the document already exists.
+     * Used for safe update and delete operations.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    /**
+     * Validates that the patient's ID is being set correctly during profile creation.
+     * Enforces consistency between the document's path and its internal data.
+     */
+    function isCreatingOwnPatientProfile(patientId) {
+      return request.resource.data.id == patientId;
+    }
+
+    /**
+     * Validates that the patient's ID is immutable during profile updates.
+     * Prevents re-assigning ownership of a patient record.
+     */
+    function isUpdatingOwnPatientProfile() {
+      return request.resource.data.id == resource.data.id;
+    }
+
+    /**
+     * Validates that the appointment's patientId field matches the owner's ID.
+     * Enforces the relationship between a patient and their appointment upon creation.
+     */
+    function isCreatingOwnAppointment(patientId) {
+      return request.resource.data.patientId == patientId;
+    }
+
+    /**
+     * Validates that the patientId field on an appointment is immutable.
+     * Prevents an appointment from being moved to another patient.
+     */
+    function isUpdatingOwnAppointment() {
+      return request.resource.data.patientId == resource.data.patientId;
+    }
+
+    // -------------------------------------------------------------------------
+    // Collection Rules
+    // -------------------------------------------------------------------------
+
+    /**
+     * @description Controls access to patient profile documents.
+     * @path /patients/{patientId}
+     * @allow (create) An authenticated user creating their own profile document.
+     * @allow (get) An authenticated user reading their own profile.
+     * @deny (list) Any user attempting to list all patient profiles.
+     * @deny (update) A user trying to update another user's profile.
+     * @principle Restricts access to a user's own data tree and prevents user enumeration.
+     */
+    match /patients/{patientId} {
+      allow get: if isOwner(patientId);
+      allow list: if false;
+      allow create: if isOwner(patientId) && isCreatingOwnPatientProfile(patientId);
+      allow update: if isExistingOwner(patientId) && isUpdatingOwnPatientProfile();
+      allow delete: if isExistingOwner(patientId);
+    }
+
+    /**
+     * @description Controls access to a patient's appointment subcollection.
+     * @path /patients/{patientId}/appointments/{appointmentId}
+     * @allow (create) An authenticated patient creating an appointment for themselves.
+     * @allow (list) An authenticated patient listing their own appointments.
+     * @deny (get) A user trying to read an appointment belonging to another patient.
+     * @deny (delete) A user trying to delete another patient's appointment.
+     * @principle Enforces hierarchical ownership; access to child documents is inherited from the parent path.
+     */
+    match /patients/{patientId}/appointments/{appointmentId} {
+      allow get: if isOwner(patientId);
+      allow list: if isOwner(patientId);
+      allow create: if isOwner(patientId) && isCreatingOwnAppointment(patientId);
+      allow update: if isExistingOwner(patientId) && isUpdatingOwnAppointment();
+      allow delete: if isExistingOwner(patientId);
+    }
+
+    /**
+     * @description Controls access to public clinic information.
+     * @path /clinics/{clinicId}
+     * @allow (get) Any user, including unauthenticated users, reading clinic details.
+     * @allow (list) Any user, including unauthenticated users, listing all clinics.
+     * @deny (create) Any user trying to add a new clinic from the client.
+     * @deny (update) Any user trying to modify a clinic from the client.
+     * @principle Provides public read access while preventing all client-side write operations.
+     */
+    match /clinics/{clinicId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    /**
+     * @description Controls access to gallery images.
+     * @path /gallery/{imageId}
+     * @allow (get) Any user, including unauthenticated users, reading gallery images.
+     * @allow (list) Any user, including unauthenticated users, listing all gallery images.
+     * @allow (create, update, delete) Authenticated users only (admin check on client-side).
+     * @principle Provides public read access for website display, write operations for admin.
+     */
+    match /gallery/{imageId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn();
+    }
+
+    /**
+     * @description Controls access to testimonials.
+     * @path /testimonials/{testimonialId}
+     * @allow (get) Any user, including unauthenticated users, reading testimonials.
+     * @allow (list) Any user, including unauthenticated users, listing all testimonials.
+     * @allow (create, update, delete) Authenticated users only (admin check on client-side).
+     * @principle Provides public read access for website display, write operations for admin.
+     */
+    match /testimonials/{testimonialId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn();
+      allow delete: if isSignedIn();
+    }
+  }
+}
