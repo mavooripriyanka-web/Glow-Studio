@@ -75,13 +75,22 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center bg-stone-100 overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/person.jpg"
-            alt="Glow Studio"
+            src="/glow_studio_hero.png"
+            alt="Glow Studio Hero"
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-headline text-white drop-shadow-2xl tracking-tight">
+            Glow Studio
+          </h1>
+          <p className="mt-6 text-lg md:text-2xl text-white/90 drop-shadow-md font-light tracking-wide max-w-2xl mx-auto">
+            Personalized care for the skin that's uniquely yours.
+          </p>
         </div>
       </section>
 

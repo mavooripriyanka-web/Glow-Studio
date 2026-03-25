@@ -18,13 +18,16 @@ export default function ContactPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <div className="relative bg-cover bg-center py-20" style={{ backgroundImage: "url('/person.jpg')" }}>
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="container relative px-4 text-left">
-          <h1 className="text-5xl font-bold font-headline text-primary">
-            {t("contactUs.title", "Contact Us")}
+      <div className="relative bg-cover bg-center py-32" style={{ backgroundImage: "url('/glow_studio_hero.png')" }}>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container relative px-4 text-center">
+          <h1 className="text-6xl md:text-8xl font-bold font-headline text-white mb-6 drop-shadow-lg">
+            Glow Studio
           </h1>
-          <p className="mt-4 text-primary max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-headline text-white/90">
+            {t("contactUs.title", "Contact Us")}
+          </h2>
+          <p className="mt-6 text-white/80 max-w-2xl mx-auto text-lg md:text-xl font-light">
             {t("contactUs.subtitlePart1", "Have a question or need help?")} <br />
             {t("contactUs.subtitlePart2", "Reach out using the form or contact details.")} <br />
             {t("contactUs.subtitlePart3", "We'll get back to you shortly.")}
